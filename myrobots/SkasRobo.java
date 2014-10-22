@@ -16,50 +16,50 @@
     private float direction = 1;
     private float turnDirection = 1;
     private boolean justChangedDirection = false;
-     abstract class State<T> {
-         abstract void enter(T obj);
-         abstract void execute(T obj);
-         abstract void exit(T obj);
-     }
-     class Flee extends State<AdvancedRobot>{
-
-        @Override
-        void enter(AdvancedRobot obj) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        void execute(AdvancedRobot obj) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        void exit(AdvancedRobot obj) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-       
-     }
-     
-     class Default extends State<AdvancedRobot>{
-
-        @Override
-        void enter(AdvancedRobot obj) {
-            
-        }
-
-        @Override
-        void execute(AdvancedRobot obj) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        void exit(AdvancedRobot obj) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-       
-     }
+//     abstract class State<T> {
+//         abstract void enter(T obj);
+//         abstract void execute(T obj);
+//         abstract void exit(T obj);
+//     }
+//     class Flee extends State<AdvancedRobot>{
+//
+//        @Override
+//        void enter(AdvancedRobot obj) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        }
+//
+//        @Override
+//        void execute(AdvancedRobot obj) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        }
+//
+//        @Override
+//        void exit(AdvancedRobot obj) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        }
+//
+//       
+//     }
+//     
+//     class Default extends State<AdvancedRobot>{
+//
+//        @Override
+//        void enter(AdvancedRobot obj) {
+//            
+//        }
+//
+//        @Override
+//        void execute(AdvancedRobot obj) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        }
+//
+//        @Override
+//        void exit(AdvancedRobot obj) {
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        }
+//
+//       
+//     }
      public void run() {
         this.setAdjustGunForRobotTurn(true);
 
@@ -93,6 +93,8 @@
             if (getGunHeat() == 0) 
             {
                 double difference_heading = Math.abs(e.getHeading() - getHeading());
+                
+               
                 fire(Math.min(3, getEnergy() - .1));
                 
             }
